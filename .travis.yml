@@ -1,1 +1,10 @@
 language: java
+
+addons:
+  sonarcloud:
+    organization: "arthurjaouen-ipi-github"
+    token:
+      secure: "263d5f743e6c6b9b682b47bea2e69ddbfb77b5af"
+
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=arthurjaouen-ipi_ipi-java-350-tp
